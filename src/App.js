@@ -15,4 +15,6 @@ function App() {
   );
 }
 
+const a = () => {return 0 }
+
 export default App;
