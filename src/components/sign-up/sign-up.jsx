@@ -36,7 +36,14 @@ class SignUp extends React.Component {
         confirmPassword: "",
       });
     } catch (error) {
-      console.log("Error creating new User with E-Mail and Password", error);
+      const { code, message } = error;
+      switch(code) {
+        case "auth/weak-password":
+          alert(message);
+          break;
+        default:
+          console.log("Error creating new User with E-Mail and Password", error);
+      }
     }
   }
 
